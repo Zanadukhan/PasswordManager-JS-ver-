@@ -12,7 +12,7 @@
     <div>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password"/>
-        <button type="button" id="test" onclick="generate(12)">generate new pass</button>
+        <button type="button" id="generate-button">generate new pass</button>
     </div>
 
 
@@ -33,6 +33,10 @@
                 field.value = password;
             
         }
+
+        button.addEventListener('click', () => {
+            generate(12)
+        })
     </script>
 
 </form>
