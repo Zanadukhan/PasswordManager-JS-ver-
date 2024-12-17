@@ -11,20 +11,29 @@
 
     <div>
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password"/>
-        <button type="button" id="generate-button">generate new pass</button>
+        <input type="text" id="password" name="password"/>
+        <button type="button" id="generate-button" class="btn btn-info">generate new pass</button>
+        <select class="custom-select custom-select-sm" id="length">
+            <option selected>Choose how long you want your password to be</option>
+            <option value="2">2</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
     </div>
 
 
-    <button type="submit" class="btn btn-default">Submit</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
 
     <!-- This is so Jank but it works! -->
     <script>
         
         const button = document.getElementById('generate-button')
         let field = document.getElementById('password')
+        
 
-        const generate = (length) => {
+        const generate = () => {
+            const length = document.getElementById('length').value
             const characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz~!@-#$';
             const password = Array.from(crypto.getRandomValues(new Uint32Array(length)))
                 .map((x) => characters[x % characters.length])
@@ -34,8 +43,10 @@
             
         }
 
+        
+
         button.addEventListener('click', () => {
-            generate(12)
+            generate()
         })
     </script>
 
