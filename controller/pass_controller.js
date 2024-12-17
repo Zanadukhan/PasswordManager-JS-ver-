@@ -1,11 +1,12 @@
-import PasswordGenerator from "../utils/password-generator.js";
+
 import { PrismaClient, Prisma } from '@prisma/client'
+import PasswordGenerator from "../utils/password-generator.js";
 
 const prisma = new PrismaClient()
+let newPass = new PasswordGenerator(10)
 
-const pass = new PasswordGenerator(10);
 
-pass.generate();
+
 
 
 let passController = {
@@ -23,10 +24,6 @@ let passController = {
         res.redirect('/');
     },
 
-    list: async (req, res) => {
-        const entries = await prisma.loginItem.findMany();
-        res.render('index', { entries: entries})
-    }
 };
 
 export {passController}

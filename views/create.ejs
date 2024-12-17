@@ -11,9 +11,28 @@
 
     <div>
         <label for="password">Password:</label>
-        <input type="text" id="password" name="password" />
+        <input type="password" id="password" name="password"/>
+        <button type="button" id="test" onclick="generate(12)">generate new pass</button>
     </div>
 
+
     <button type="submit" class="btn btn-default">Submit</button>
+
+    <!-- This is so Jank but it works! -->
+    <script>
+        
+        const button = document.getElementById('generate-button')
+        let field = document.getElementById('password')
+
+        const generate = (length) => {
+            const characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz~!@-#$';
+            const password = Array.from(crypto.getRandomValues(new Uint32Array(length)))
+                .map((x) => characters[x % characters.length])
+                .join('');  
+
+                field.value = password;
+            
+        }
+    </script>
 
 </form>
