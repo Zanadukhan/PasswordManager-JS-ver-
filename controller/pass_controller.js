@@ -10,6 +10,9 @@ pass.generate();
 
 let passController = {
     createEntry: async (req, res) => {
+        if (req.body.entry_name === '') {
+            req.body.entry_name = null
+        }
         await prisma.loginItem.create({
             data: {
                 name: req.body.entry_name,
@@ -18,6 +21,11 @@ let passController = {
             },
         });
         res.redirect('/');
+    },
+
+    list: async (req, res) => {
+        const entries = await prisma.loginItem.findMany();
+        res.render('index', { entries: entries})
     }
 };
 

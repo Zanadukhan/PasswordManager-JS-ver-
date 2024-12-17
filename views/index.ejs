@@ -2,3 +2,11 @@
 
 <h1>Hello World</h1>
 
+<% entries.forEach(entry => { %>
+    <div>
+    <h2><%= entry.service %></h2>
+    <p><%= entry.name %></p>
+    <p><%= entry.password %></p>
+    </div>
+<% }) %>
+

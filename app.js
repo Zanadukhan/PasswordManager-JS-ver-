@@ -12,9 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 const port = 3000;
 
 
-app.get('/', (req, res) => {
-    res.render('index');
-});
+app.get('/', passController.list)
 
 app.get('/create', (req, res) => {
     res.render('create');
