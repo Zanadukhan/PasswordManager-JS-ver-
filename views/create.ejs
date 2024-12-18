@@ -11,9 +11,75 @@
 
     <div>
         <label for="password">Password:</label>
-        <input type="text" id="password" name="password" />
+        <input type="text" id="password" name="password"/>
+        <button type="button" id="generate-button" class="btn btn-info">generate new pass</button>
+        <select class="custom-select custom-select-sm" id="length">
+            <option selected>Choose how long you want your password to be</option>
+            <option value="2">2</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="customCheck1">
+            <label class="custom-control-label" for="customCheck1">Special characters</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="customCheck2">
+            <label class="custom-control-label" for="customCheck2">Numbers</label>
+          </div>
     </div>
 
-    <button type="submit" class="btn btn-default">Submit</button>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+    <!-- This is so Jank but it works! -->
+    <script>
+        
+        const button = document.getElementById('generate-button');
+        let field = document.getElementById('password');
+        const numbox = document.getElementById('customCheck2');
+        const specialbox = document.getElementById('customCheck1');
+        let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+        let special = '';
+        let numbers = '';
+
+        numbox.addEventListener('click', () => {
+            if (numbox.checked) {
+                numbers = '0123456789';
+            } else {
+                numbers = numbers.replace(/[0-9]/g, "");
+                characters = characters.replace(/[0-9]/g, "");
+            }
+        })
+
+        specialbox.addEventListener('click', () => {
+            if (specialbox.checked) {
+                special = '~!@-#$';
+            } else {
+                special = special.replace(/[^a-zA-Z0-9]/g, "");;
+                characters = characters.replace(/[^a-zA-Z0-9]/g, "");;
+            }
+        })
+        
+        
+
+        const generate = () => {
+            characters = characters + special + numbers;
+            const length = document.getElementById('length').value
+            const password = Array.from(crypto.getRandomValues(new Uint32Array(length)))
+                .map((x) => characters[x % characters.length])
+                .join('');  
+
+                field.value = password;
+            
+        }
+
+        
+
+        button.addEventListener('click', () => {
+            generate()
+        })
+    </script>
 
 </form>
