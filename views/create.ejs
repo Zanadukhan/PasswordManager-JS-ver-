@@ -11,7 +11,7 @@
 
     <div>
         <label for="password">Password:</label>
-        <input type="text" id="password" name="password"/>
+        <input type="password" id="password" name="password"/>
         <button type="button" id="generate-button" class="btn btn-info">generate new pass</button>
         <select class="custom-select custom-select-sm" id="length">
             <option selected>Choose how long you want your password to be</option>
@@ -19,7 +19,15 @@
             <option value="10">10</option>
             <option value="11">11</option>
             <option value="12">12</option>
-          </select>
+        </select>
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="customCheck1">
+            <label class="custom-control-label" for="customCheck1">Special characters</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="customCheck2">
+            <label class="custom-control-label" for="customCheck2">Numbers</label>
+          </div>
     </div>
 
 
