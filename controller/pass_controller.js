@@ -24,6 +24,26 @@ let passController = {
         res.redirect('/');
     },
 
+    deleteEntry: async (req, res) => {
+        await prisma.loginItem.delete({
+            where: {
+                id: Number(req.params.id)
+            }
+        })
+        res.redirect('/')
+
+    },
+
+    viewEntry: async (req, res) => {
+        const entry = await prisma.loginItem.findFirst({
+            where: {
+                id: Number(req.params.id)
+            }
+        })
+
+        res.render('entry', {entry: entry})
+    }
+
 };
 
 export {passController}

@@ -28,6 +28,9 @@ app.get('/create', userinterface_controller.create)
 
 app.post('/createpass', passController.createEntry)
 
+app.post('/delete/:id', passController.deleteEntry)
+
+app.get('/entry/:id', passController.viewEntry)
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
