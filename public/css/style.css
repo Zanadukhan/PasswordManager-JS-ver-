@@ -3,6 +3,7 @@
     width: 50% !important; 
  }
 
- .view-frame {
-    visibility: hidden;
+ #view-frame {
+    visibility: collapse;
+    z-index: 10;
  }
