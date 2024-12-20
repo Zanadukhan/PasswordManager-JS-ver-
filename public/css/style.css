@@ -6,4 +6,13 @@
  #view-frame {
     visibility: collapse;
     z-index: 10;
+    position: relative;
+    bottom: 13.4375em;
+    width: 2000px;
+    height: 20em;
+    overflow: auto;
+ }
+
+ iframe {
+    width: 50em;
  }

@@ -12,6 +12,7 @@
   "dependencies": {
     "@prisma/client": "^6.0.1",
     "bootstrap": "^5.3.3",
+    "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
     "express-ejs-layouts": "^2.5.1",
@@ -20,5 +21,4 @@
   "devDependencies": {
     "prisma": "^6.0.1"
   }
-
 }

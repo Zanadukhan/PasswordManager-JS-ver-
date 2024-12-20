@@ -1,5 +1,7 @@
 
 
+<button type="button" id="exit-iframe" class="btn btn-danger">Close</button>
+
 <h1><%= entry.name %></h1>
 <ul>
     <li>
@@ -9,3 +11,17 @@
         <%= entry.password %>
     </li>
 </ul>
+
+<script>
+    let iframe_div = parent.document.getElementById("view-frame");
+    const button = document.getElementById('exit-iframe')
+
+    button.addEventListener('click', () => {
+        let visiblity_style = window.getComputedStyle(iframe_div)
+        let iframe_visiblity = visiblity_style.getPropertyValue('visibility')
+        if (iframe_visiblity === 'visible') {
+            iframe_div.style.visibility = 'collapse';
+        }
+    })
+    
+</script>
