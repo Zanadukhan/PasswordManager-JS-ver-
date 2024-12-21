@@ -19,6 +19,7 @@ let passController = {
             data: {
                 name: req.body.entry_name,
                 service: req.body.service_name,
+                Username: req.body.user_name,
                 password: req.body.password
             },
         });

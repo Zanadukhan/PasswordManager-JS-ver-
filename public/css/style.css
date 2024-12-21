@@ -18,3 +18,7 @@
     border-width: 2px;
     border-style: solid;
  }
+
+ form div {
+   margin: 5px;
+ }
