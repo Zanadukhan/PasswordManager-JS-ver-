@@ -12,6 +12,7 @@ let newPass = new PasswordGenerator(10)
 
 let passController = {
     createEntry: async (req, res) => {
+        console.log(req.body.password)
         let password = encryptData(req.body.password)
         if (req.body.entry_name === '') {
             req.body.entry_name = null

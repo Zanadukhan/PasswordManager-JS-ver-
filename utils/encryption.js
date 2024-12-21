@@ -15,14 +15,8 @@ const encryptionIV = crypto
   .digest('hex')
   .substring(0, 16)
 
-console.log(encryption_method)
-console.log(secret_iv)
-console.log(secret_key)
-
   export function encryptData(data) {
-    console.log(encryption_method, key, encryptionIV)
     const cipher = crypto.createCipheriv(encryption_method, key, encryptionIV)
-    console.log(cipher)
     return Buffer.from(
       cipher.update(data, 'utf8', 'hex') + cipher.final('hex')
     ).toString('base64') // Encrypts data and converts to hex and base64
