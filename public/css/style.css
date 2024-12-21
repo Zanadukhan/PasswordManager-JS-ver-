@@ -15,4 +15,6 @@
 
  iframe {
     width: 50em;
+    border-width: 2px;
+    border-style: solid;
  }

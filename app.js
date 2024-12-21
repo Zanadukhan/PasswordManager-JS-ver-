@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url';
 import expressEjsLayouts from "express-ejs-layouts";
 import { passController } from "./controller/pass_controller.js";
 import { userinterface_controller } from "./controller/userInterface_controller.js";
+import { encryptPassword } from './middleware/encryption_middleware.js'
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -13,9 +14,12 @@ const __dirname = path.dirname(__filename);
 const app = express();
 app.set('view engine', 'ejs');
 
+
 app.use(expressEjsLayouts)
 app.use(express.urlencoded({ extended: true }));
+app.use('/createpass',encryptPassword);
 app.use(express.static(path.join(__dirname, "public")));
+
 
 
 
