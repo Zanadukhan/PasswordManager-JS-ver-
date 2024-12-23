@@ -14,4 +14,5 @@ class PasswordGenerator {
   }
 }
 
+
 export default PasswordGenerator;

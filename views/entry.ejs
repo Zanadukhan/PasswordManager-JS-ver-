@@ -1,0 +1,33 @@
+
+
+
+
+<h1><%= entry.name %></h1>
+<ul>
+    <li>
+        <p>Service: <%= entry.service %></p>
+    </li>
+    <li>
+        <p>Email: <%= entry.Username %></p>
+    </li>
+    <li>
+        <p>Password: <%= entry_pass %> </p>
+    </li>
+</ul>
+
+<button type="button" id="exit-iframe" class="btn btn-danger">Close</button>
+<a href="/edit/<%= entry.id %>" class="btn btn-warning">Edit</a>
+
+<script>
+    let iframe_div = parent.document.getElementById("view-frame");
+    const button = document.getElementById('exit-iframe')
+
+    button.addEventListener('click', () => {
+        let visiblity_style = window.getComputedStyle(iframe_div)
+        let iframe_visiblity = visiblity_style.getPropertyValue('visibility')
+        if (iframe_visiblity === 'visible') {
+            iframe_div.style.visibility = 'collapse';
+        }
+    })
+    
+</script>

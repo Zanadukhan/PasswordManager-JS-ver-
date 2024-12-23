@@ -1,0 +1,24 @@
+.table {
+    margin: auto;
+    width: 50% !important; 
+ }
+
+ #view-frame {
+    visibility: collapse;
+    z-index: 10;
+    position: relative;
+    bottom: 13.4375em;
+    width: 2000px;
+    height: 20em;
+    overflow: auto;
+ }
+
+ iframe {
+    width: 50em;
+    border-width: 2px;
+    border-style: solid;
+ }
+
+ form div {
+   margin: 5px;
+ }
