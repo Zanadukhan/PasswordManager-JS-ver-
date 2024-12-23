@@ -23,8 +23,8 @@
     <thead class="thead-dark">
         <tr>
             <th scope="col" width="10%">#</th>
-            <th scope="col" width="10%">Service</th>
             <th scope="col" width="10%">Name</th>
+            <th scope="col" width="10%">Service</th>
             <th scope="col"width="15%">Username/Email</th>
             <th scope="col" width="10%">view more</th>
             <th scope="col" width="10%">delete</th>
@@ -36,8 +36,8 @@
             <% counter += 1 %>
             <tr>
                 <th scope="row"><%= counter %></th>
-                <td><%= entry.service %></td>
                 <td><%= entry.name %></td>
+                <td><%= entry.service %></td>
                 <td><%= entry.Username %></td>
                 <td class="w-25 p-3">
                         <button type="button" class="btn btn-info view" data-id="<%= entry.id %>">View</button>
@@ -86,18 +86,13 @@
         const filter = input.value.toUpperCase();
         const table = document.getElementById("entry-table");
         const row = table.getElementsByTagName('tr');
-
-        for (i = 0; i < row.length; i++) {
-            td = row[i].getElementsByTagName("td")[0];
-            if (td) {
-              txtValue = td.textContent || td.innerText;
-              console.log(txtValue)
-              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        for (i = 1; i < row.length; i++) {
+            if (row[i].textContent.toUpperCase().indexOf(filter) > -1) {
                 row[i].style.display = "";
-              } else {
+            } else {
                 row[i].style.display = "none";
-              }
-            }
+            }      
+            
         }
     }
 
