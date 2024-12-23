@@ -10,15 +10,21 @@
     <li>
         <p>Email: <%= entry.Username %></p>
     </li>
-    <li>
-        <p>Password: <%= entry_pass %> </p>
-    </li>
+    
+    <div id= password-control class="custom-control custom-checkbox">
+        <li>
+            <p id="pass">Password: ******** </p>
+        </li>
+        <input type="checkbox" class="custom-control-input" data-password="<%= entry_pass %>" id="showpass">
+        <label class="custom-control-label" for="showpass">Show password?</label>
+      </div>
 </ul>
 
 <button type="button" id="exit-iframe" class="btn btn-danger">Close</button>
 <a href="/edit/<%= entry.id %>" class="btn btn-warning">Edit</a>
 
 <script>
+    // hide iframe when close button is clicked
     let iframe_div = parent.document.getElementById("view-frame");
     const button = document.getElementById('exit-iframe')
 
@@ -30,4 +36,21 @@
         }
     })
     
+    const checkBox = document.getElementById('showpass');
+    const password = checkBox.getAttribute('data-password')
+    const passField = document.getElementById('pass')
+
+    const hiddenPassword = () => {
+        if (checkBox.checked === false) {
+            passField.textContent = '**********'
+
+        } else {
+            passField.textContent = password
+
+        }
+    }
+
+    checkBox.addEventListener('click', hiddenPassword);
+
+        
 </script>
