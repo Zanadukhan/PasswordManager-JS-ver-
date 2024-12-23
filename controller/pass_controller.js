@@ -44,8 +44,34 @@ let passController = {
         })
         const password = decryptData(entry.password)
         res.render('entry', {entry: entry, entry_pass:password })
-    }
+    },
 
+    edit: async (req, res) => {
+        const entry = await prisma.loginItem.findFirst({
+            where: {
+                id: Number(req.params.id)
+            }
+        })
+        const password = decryptData(entry.password)
+        res.render('edit', {entry: entry, entry_pass:password })
+    },
+
+    editEntry: async (req, res) => {
+        console.log(req.body)
+        const id = req.params.id
+        await prisma.loginItem.update({
+            where: {
+                id: Number(id)
+            },
+            data: {
+                name: req.body.entry_name,
+                service: req.body.service_name,
+                Username: req.body.user_name,
+                password: req.body.password
+            }
+    })
+    res.redirect(`/entry/${id}`)
+    }
 };
 
 export {passController}

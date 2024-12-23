@@ -15,9 +15,11 @@ const app = express();
 app.set('view engine', 'ejs');
 
 
-app.use(expressEjsLayouts)
+app.use(expressEjsLayouts);
 app.use(express.urlencoded({ extended: true }));
-app.use('/createpass',encryptPassword);
+// app.use('/createpass',encryptPassword);
+// app.use('/edit/:id', encryptPassword)
+app.use(encryptPassword);
 app.use(express.static(path.join(__dirname, "public")));
 
 
@@ -35,6 +37,10 @@ app.post('/createpass', passController.createEntry)
 app.post('/delete/:id', passController.deleteEntry)
 
 app.get('/entry/:id', passController.viewEntry)
+
+app.get('/edit/:id', passController.edit)
+
+app.post('/edit/:id', passController.editEntry)
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
