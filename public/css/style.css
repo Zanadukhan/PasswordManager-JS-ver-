@@ -22,3 +22,12 @@
  form div {
    margin: 5px;
  }
+
+ .search-input {
+   height: 50px;
+   border-radius: 30px;
+   padding-left: 35px;
+   border: none;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   margin-bottom: 1em;
+}
