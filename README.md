@@ -1,15 +1,15 @@
-<p align="center">
-    <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" align="center" width="30%">
-</p>
+
 <p align="center"><h1 align="center">PASSWORDMANAGER-JS-VER-</h1></p>
 <p align="center">
-	<em><code>❯ REPLACE-ME</code></em>
+
 </p>
 <p align="center">
 	<img src="https://img.shields.io/github/license/Zanadukhan/PasswordManager-JS-ver-?style=default&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
 	<img src="https://img.shields.io/github/last-commit/Zanadukhan/PasswordManager-JS-ver-?style=default&logo=git&logoColor=white&color=0080ff" alt="last-commit">
 	<img src="https://img.shields.io/github/languages/top/Zanadukhan/PasswordManager-JS-ver-?style=default&color=0080ff" alt="repo-top-language">
 	<img src="https://img.shields.io/github/languages/count/Zanadukhan/PasswordManager-JS-ver-?style=default&color=0080ff" alt="repo-language-count">
+
+	
 </p>
 <p align="center"><!-- default option, no dependency badges. -->
 </p>
@@ -38,14 +38,15 @@
 
 ##  Overview
 
-<code>❯ REPLACE-ME</code>
+A personal password manager that uses a browser based UI in order to store username and password for your own personal use using SQLite (via prisma)(for now)
 
 ---
 
 ##  Features
 
-<code>❯ REPLACE-ME</code>
-
+- Sort and filter through entries
+- Randomly generate passwords (with options for: 1. password length 2. special characters 3. numbers)
+- Store passwords so that each website can have its own unique password
 ---
 
 ##  Project Structure
@@ -91,87 +92,15 @@
 			<table>
 			<tr>
 				<td><b><a href='https://github.com/Zanadukhan/PasswordManager-JS-ver-/blob/master/app.js'>app.js</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td>Main script that launches the web app</td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/Zanadukhan/PasswordManager-JS-ver-/blob/master/package-lock.json'>package-lock.json</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
-			</tr>
-			<tr>
-				<td><b><a href='https://github.com/Zanadukhan/PasswordManager-JS-ver-/blob/master/config.js'>config.js</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/Zanadukhan/PasswordManager-JS-ver-/blob/master/package.json'>package.json</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
 			</tr>
 			</table>
-		</blockquote>
-	</details>
-	<details> <!-- prisma Submodule -->
-		<summary><b>prisma</b></summary>
-		<blockquote>
-			<table>
-			<tr>
-				<td><b><a href='https://github.com/Zanadukhan/PasswordManager-JS-ver-/blob/master/prisma/schema.prisma'>schema.prisma</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
-			</tr>
-			</table>
-			<details>
-				<summary><b>migrations</b></summary>
-				<blockquote>
-					<table>
-					<tr>
-						<td><b><a href='https://github.com/Zanadukhan/PasswordManager-JS-ver-/blob/master/prisma/migrations/migration_lock.toml'>migration_lock.toml</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					</table>
-					<details>
-						<summary><b>20241221202738_init</b></summary>
-						<blockquote>
-							<table>
-							<tr>
-								<td><b><a href='https://github.com/Zanadukhan/PasswordManager-JS-ver-/blob/master/prisma/migrations/20241221202738_init/migration.sql'>migration.sql</a></b></td>
-								<td><code>❯ REPLACE-ME</code></td>
-							</tr>
-							</table>
-						</blockquote>
-					</details>
-					<details>
-						<summary><b>20241221202221_init</b></summary>
-						<blockquote>
-							<table>
-							<tr>
-								<td><b><a href='https://github.com/Zanadukhan/PasswordManager-JS-ver-/blob/master/prisma/migrations/20241221202221_init/migration.sql'>migration.sql</a></b></td>
-								<td><code>❯ REPLACE-ME</code></td>
-							</tr>
-							</table>
-						</blockquote>
-					</details>
-					<details>
-						<summary><b>20241216051245_init</b></summary>
-						<blockquote>
-							<table>
-							<tr>
-								<td><b><a href='https://github.com/Zanadukhan/PasswordManager-JS-ver-/blob/master/prisma/migrations/20241216051245_init/migration.sql'>migration.sql</a></b></td>
-								<td><code>❯ REPLACE-ME</code></td>
-							</tr>
-							</table>
-						</blockquote>
-					</details>
-					<details>
-						<summary><b>20241221200024_init</b></summary>
-						<blockquote>
-							<table>
-							<tr>
-								<td><b><a href='https://github.com/Zanadukhan/PasswordManager-JS-ver-/blob/master/prisma/migrations/20241221200024_init/migration.sql'>migration.sql</a></b></td>
-								<td><code>❯ REPLACE-ME</code></td>
-							</tr>
-							</table>
-						</blockquote>
-					</details>
-				</blockquote>
-			</details>
 		</blockquote>
 	</details>
 	<details> <!-- views Submodule -->
@@ -180,27 +109,27 @@
 			<table>
 			<tr>
 				<td><b><a href='https://github.com/Zanadukhan/PasswordManager-JS-ver-/blob/master/views/create.ejs'>create.ejs</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td>Page for creating new entries, with fields for name, username, and password</td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/Zanadukhan/PasswordManager-JS-ver-/blob/master/views/entry.ejs'>entry.ejs</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td>page for viewing an individual entry that allows users to edit and view entries</td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/Zanadukhan/PasswordManager-JS-ver-/blob/master/views/layout.ejs'>layout.ejs</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td>layout for ejs templating</td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/Zanadukhan/PasswordManager-JS-ver-/blob/master/views/logins.ejs'>logins.ejs</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td>tbd</td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/Zanadukhan/PasswordManager-JS-ver-/blob/master/views/index.ejs'>index.ejs</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td>main page that lists out all entries and allows users to filter and click on an individual entry to open it up</td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/Zanadukhan/PasswordManager-JS-ver-/blob/master/views/edit.ejs'>edit.ejs</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td>page to edit the name, username, and/or password</td>
 			</tr>
 			</table>
 			<details>
@@ -209,11 +138,11 @@
 					<table>
 					<tr>
 						<td><b><a href='https://github.com/Zanadukhan/PasswordManager-JS-ver-/blob/master/views/partials/navbar.ejs'>navbar.ejs</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td>navigation bar as a part of the template</td>
 					</tr>
 					<tr>
 						<td><b><a href='https://github.com/Zanadukhan/PasswordManager-JS-ver-/blob/master/views/partials/footer.ejs'>footer.ejs</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td>footer as a part of the template</td>
 					</tr>
 					</table>
 				</blockquote>
@@ -226,11 +155,11 @@
 			<table>
 			<tr>
 				<td><b><a href='https://github.com/Zanadukhan/PasswordManager-JS-ver-/blob/master/utils/password-generator.js'>password-generator.js</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td>This script contains the code that generates the passwords</td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/Zanadukhan/PasswordManager-JS-ver-/blob/master/utils/encryption.js'>encryption.js</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td>This contains the code that encrypts the password</td>
 			</tr>
 			</table>
 		</blockquote>
@@ -244,7 +173,7 @@
 					<table>
 					<tr>
 						<td><b><a href='https://github.com/Zanadukhan/PasswordManager-JS-ver-/blob/master/public/css/style.css'>style.css</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td>contains the css stylings for all the pages</td>
 					</tr>
 					</table>
 				</blockquote>
@@ -255,7 +184,6 @@
 					<table>
 					<tr>
 						<td><b><a href='https://github.com/Zanadukhan/PasswordManager-JS-ver-/blob/master/public/js/script.js'>script.js</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
 					</tr>
 					</table>
 				</blockquote>
@@ -268,7 +196,7 @@
 			<table>
 			<tr>
 				<td><b><a href='https://github.com/Zanadukhan/PasswordManager-JS-ver-/blob/master/middleware/encryption_middleware.js'>encryption_middleware.js</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td>encrypts "req.body.password" whenever req is posted or retrieved from the database</td>
 			</tr>
 			</table>
 		</blockquote>
@@ -279,11 +207,11 @@
 			<table>
 			<tr>
 				<td><b><a href='https://github.com/Zanadukhan/PasswordManager-JS-ver-/blob/master/controller/userInterface_controller.js'>userInterface_controller.js</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td>controller for listing the entries on index.ejs and rendering the creation page</td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/Zanadukhan/PasswordManager-JS-ver-/blob/master/controller/pass_controller.js'>pass_controller.js</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td>controller for CRUD operation for this web app</td>
 			</tr>
 			</table>
 		</blockquote>
@@ -350,8 +278,8 @@ Run the test suite using the following command:
 ---
 ##  Project Roadmap
 
-- [X] **`Task 1`**: <strike>Implement feature one.</strike>
-- [ ] **`Task 2`**: Implement feature two.
+- [X] **`Task 1`**: Implement login and multi user support
+- [ ] **`Task 2`**: Implement tags
 - [ ] **`Task 3`**: Implement feature three.
 
 ---
@@ -401,12 +329,14 @@ Run the test suite using the following command:
 
 ##  License
 
-This project is protected under the [SELECT-A-LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
+This project is protected under the [MIT] License. For more details, refer to the [LICENSE]file.
 
 ---
 
 ##  Acknowledgments
 
-- List any resources, contributors, inspiration, etc. here.
+- ExpressEJS
+- Bootstrap
+- Prisma
 
 ---
