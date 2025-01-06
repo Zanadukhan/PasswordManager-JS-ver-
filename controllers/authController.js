@@ -29,7 +29,16 @@ let authController = {
     checkAuthenticated: (req, res, next) => {
         if (req.isAuthenticated()) { return next() }
         res.redirect("/login")
-      }
+    },
+
+    logout: (req, res) => {
+        req.logout((err) => {
+            if (err) {
+                return next(err);
+            }
+        });
+        res.redirect('/login');
+    }
 }
 
 export {authController}

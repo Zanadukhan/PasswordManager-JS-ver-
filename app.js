@@ -43,17 +43,17 @@ const port = 3000;
 
 app.get('/dashboard', authController.checkAuthenticated, userinterface_controller.list)
 
-app.get('/create', userinterface_controller.create)
+app.get('/create', authController.checkAuthenticated, userinterface_controller.create)
 
-app.post('/createpass', passController.createEntry)
+app.post('/createpass', authController.checkAuthenticated, passController.createEntry)
 
-app.post('/delete/:id', passController.deleteEntry)
+app.post('/delete/:id', authController.checkAuthenticated, passController.deleteEntry)
 
-app.get('/entry/:id', passController.viewEntry)
+app.get('/entry/:id', authController.checkAuthenticated, passController.viewEntry)
 
-app.get('/edit/:id', passController.edit)
+app.get('/edit/:id', authController.checkAuthenticated, passController.edit)
 
-app.post('/edit/:id', passController.editEntry)
+app.post('/edit/:id', authController.checkAuthenticated, passController.editEntry)
 
 app.get('/register', userinterface_controller.registerPage)
 
@@ -62,6 +62,8 @@ app.post('/register', userController.register)
 app.get('/login', userinterface_controller.loginPage)
 
 app.post('/login', authController.loginSubmit)
+
+app.post('/logout', authController.logout)
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);

@@ -20,10 +20,11 @@ let passController = {
                 name: req.body.entry_name,
                 service: req.body.service_name,
                 Username: req.body.user_name,
-                password: req.body.password
+                password: req.body.password,
+                userID: req.user.id
             },
         });
-        res.redirect('/');
+        res.redirect('/dashboard')
     },
 
     deleteEntry: async (req, res) => {
@@ -43,7 +44,7 @@ let passController = {
             }
         })
         const password = decryptData(entry.password)
-        res.render('entry', {entry: entry, entry_pass:password })
+        res.render('entry', {entry: entry, entry_pass:password, layout: 'layouts/entry-layout'})
     },
 
     edit: async (req, res) => {
@@ -53,7 +54,7 @@ let passController = {
             }
         })
         const password = decryptData(entry.password)
-        res.render('edit', {entry: entry, entry_pass:password })
+        res.render('edit', {entry: entry, entry_pass:password, layout: 'layouts/entry-layout'})
     },
 
     editEntry: async (req, res) => {

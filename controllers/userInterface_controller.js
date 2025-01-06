@@ -7,7 +7,12 @@ const prisma = new PrismaClient()
 
 let userinterface_controller = {
     list: async (req, res) => {
-        const entries = await prisma.loginItem.findMany();
+        const entries = await prisma.loginItem.findMany({
+            where: {
+                userID: req.user.id
+            }
+        }
+        );
         res.render('dashboard', { entries: entries})
     },
     create: (req, res) => {
@@ -15,11 +20,11 @@ let userinterface_controller = {
     },
 
     registerPage: (req, res) => {
-        res.render('register', { layout: 'login-layout' })
+        res.render('register', { layout: 'layouts/login-layout' })
     },
 
     loginPage: (req, res) => {
-        res.render('login', { layout: 'login-layout' })
+        res.render('login', { layout: 'layouts/login-layout' })
     }
 
 }
