@@ -1,20 +1,10 @@
-import { PrismaClient, Prisma } from '@prisma/client'
-import passport from 'passport'
+import passport from 'passport';
+import { PrismaClient, Prisma } from '@prisma/client';
 
-const prisma = new PrismaClient()
+const prisma = new PrismaClient();
 
 
-let userController = {
-    register: async (req, res) => {
-        await prisma.user.create({
-            data: {
-                email: req.body.user_email,
-                password: req.body.user_password
-            }
-        });
-        res.redirect('/login');
-    },
-
+let authController = {
     authUser: async (email, password, done) => {
         const user = await prisma.user.findUnique({
             where: {
@@ -32,10 +22,14 @@ let userController = {
         
     },
 
-     loginSubmit: passport.authenticate('local', {
+    loginSubmit: passport.authenticate('local', {
         successRedirect: '/dashboard',
         failureRedirect: '/login',
-    })
+    }),
+    checkAuthenticated: (req, res, next) => {
+        if (req.isAuthenticated()) { return next() }
+        res.redirect("/login")
+      }
 }
 
-export { userController }
+export {authController}

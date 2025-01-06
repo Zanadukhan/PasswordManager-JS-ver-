@@ -3,14 +3,14 @@ import express from "express";
 import path from 'path';
 import { fileURLToPath } from 'url';
 import expressEjsLayouts from "express-ejs-layouts";
-import { passController } from "./controller/passwordController.js";
-import { userinterface_controller } from "./controller/userInterface_controller.js";
+import { passController } from "./controllers/passwordController.js";
+import { userinterface_controller } from "./controllers/userInterface_controller.js";
 import { encryptPassword } from './middleware/encryption_middleware.js'
-import { userController } from "./controller/userController.js";
+import { userController } from "./controllers/userController.js";
 import session from "express-session";
 import LocalStrategy from "passport-local";
-import passport from "passport";
-
+import { authController } from "./controllers/authController.js";
+import passport from "./config/passport.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -33,38 +33,15 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session()) 
 
-const customFields = {
-    usernameField: 'user_email',
-    passwordField: 'user_password'
-}
 
-passport.use(new LocalStrategy(customFields, userController.authUser))
 
-passport.serializeUser((user, done) => {
-    done(null, user);
-});
-
-passport.deserializeUser((user, done) => {
-    done(null, user);
-});
-
-app.use((req, res, next) => {
-    console.log(req.session);
-    console.log(req.user);
-    next();
-});
-
-const checkAuthenticated = (req, res, next) => {
-    if (req.isAuthenticated()) { return next() }
-    res.redirect("/login")
-  }
 
 
 
 const port = 3000;
 
 
-app.get('/dashboard', checkAuthenticated, userinterface_controller.list)
+app.get('/dashboard', authController.checkAuthenticated, userinterface_controller.list)
 
 app.get('/create', userinterface_controller.create)
 
@@ -84,7 +61,7 @@ app.post('/register', userController.register)
 
 app.get('/login', userinterface_controller.loginPage)
 
-app.post('/login', userController.loginSubmit)
+app.post('/login', authController.loginSubmit)
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
