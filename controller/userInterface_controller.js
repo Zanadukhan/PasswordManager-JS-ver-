@@ -8,7 +8,7 @@ const prisma = new PrismaClient()
 let userinterface_controller = {
     list: async (req, res) => {
         const entries = await prisma.loginItem.findMany();
-        res.render('index', { entries: entries})
+        res.render('dashboard', { entries: entries})
     },
     create: (req, res) => {
         res.render('create')
@@ -16,6 +16,10 @@ let userinterface_controller = {
 
     registerPage: (req, res) => {
         res.render('register', { layout: 'login-layout' })
+    },
+
+    loginPage: (req, res) => {
+        res.render('login', { layout: 'login-layout' })
     }
 
 }
