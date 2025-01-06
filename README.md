@@ -262,7 +262,7 @@ Run PasswordManager-JS-ver- using the following command:
 **Using `npm`** &nbsp; [<img align="center" src="https://img.shields.io/badge/npm-CB3837.svg?style={badge_style}&logo=npm&logoColor=white" />](https://www.npmjs.com/)
 
 ```sh
-❯ npm start
+❯ node app.js
 ```
 
 
@@ -278,9 +278,9 @@ Run the test suite using the following command:
 ---
 ##  Project Roadmap
 
-- [X] **`Task 1`**: Implement login and multi user support
-- [ ] **`Task 2`**: Implement tags
-- [ ] **`Task 3`**: Implement feature three.
+- [ ] **`Implement login and multi user support`**: Allow users login and show entries only to their respective users
+- [ ] **`Implement tags`**: Allow users to group up entries and sort by them
+- [ ] **`add password/username to clipboard`**: allow users to easily copy passwords at a click of a button
 
 ---
 

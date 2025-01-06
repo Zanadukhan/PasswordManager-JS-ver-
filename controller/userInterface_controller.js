@@ -14,6 +14,10 @@ let userinterface_controller = {
         res.render('create')
     },
 
+    registerPage: (req, res) => {
+        res.render('register', { layout: 'login-layout' })
+    }
+
 }
 
 

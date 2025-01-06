@@ -6,6 +6,7 @@ import expressEjsLayouts from "express-ejs-layouts";
 import { passController } from "./controller/pass_controller.js";
 import { userinterface_controller } from "./controller/userInterface_controller.js";
 import { encryptPassword } from './middleware/encryption_middleware.js'
+import { userController } from "./controller/user_controller.js";
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -41,6 +42,12 @@ app.get('/entry/:id', passController.viewEntry)
 app.get('/edit/:id', passController.edit)
 
 app.post('/edit/:id', passController.editEntry)
+
+app.get('/register', userinterface_controller.registerPage)
+
+app.post('/register', userController.register)
+
+
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);

@@ -23,4 +23,13 @@ model LoginItem {
   service String
   Username String?
   password String
+  User User @relation(fields: [userID], references: [id])
+  userID Int
+}
+
+model User {
+  id Int @id @default(autoincrement())
+  email String @unique
+  password String
+  logins LoginItem[]
 }
