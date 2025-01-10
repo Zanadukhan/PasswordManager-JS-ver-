@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 import expressEjsLayouts from "express-ejs-layouts";
 import { passController } from "./controllers/passwordController.js";
 import { userinterface_controller } from "./controllers/userInterface_controller.js";
-import { encryptPassword } from './middleware/encryption_middleware.js'
+import { encryptPassword } from './middleware/security_middleware.js'
 import { userController } from "./controllers/userController.js";
 import session from "express-session";
 import LocalStrategy from "passport-local";
@@ -68,3 +68,5 @@ app.post('/logout', authController.logout)
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
     });
+
+export default app;

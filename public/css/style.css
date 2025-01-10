@@ -1,20 +1,25 @@
 .table {
     margin: auto;
     width: 50% !important; 
+    text-align: center;
+    vertical-align: middle;
  }
-
+ 
+ tr {
+   text-align: center;
+   vertical-align: middle;
+ }
+ 
  #view-frame {
     visibility: collapse;
     z-index: 10;
     position: relative;
     bottom: 13.4375em;
-    width: 2000px;
     height: 20em;
     overflow: auto;
  }
 
  iframe {
-    width: 50em;
     border-width: 2px;
     border-style: solid;
  }
@@ -52,4 +57,24 @@ footer {
 
 #logout-btn {
    margin-right: 1.5em;
+}
+
+#exit-iframe {
+   margin-left: 10px;
+}
+
+#entry-frame {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+}
+
+#entry-name {
+   margin-top: 0.5em;
+   font-size: 50px;
+}
+
+.navbar-brand {
+   padding-left: 20px;
 }

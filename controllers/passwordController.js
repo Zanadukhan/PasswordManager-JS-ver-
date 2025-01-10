@@ -33,7 +33,7 @@ let passController = {
                 id: Number(req.params.id)
             }
         })
-        res.redirect('/')
+        res.redirect('/dashboard')
 
     },
 

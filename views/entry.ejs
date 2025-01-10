@@ -1,8 +1,8 @@
 
 
 
-
-<h1><%= entry.name %></h1>
+<div id="entry-frame" class="d-flex justify-content-center">
+<h1 id="entry_name" style="margin-top: 0.5em; font-size: 50px "><%= entry.name %></h1>
 <ul>
     <li>
         <p>Service: <%= entry.service %></p>
@@ -20,9 +20,11 @@
       </div>
 </ul>
 
-<button type="button" id="exit-iframe" class="btn btn-danger">Close</button>
-<a href="/edit/<%= entry.id %>" class="btn btn-warning">Edit</a>
-
+    <div id="entry_buttons" class="flex-row">
+    <button type="button" id="exit-iframe" class="btn btn-danger">Close</button>
+    <a href="/edit/<%= entry.id %>" class="btn btn-warning">Edit</a>
+    </div>
+</div>
 <script>
     // hide iframe when close button is clicked
     let iframe_div = parent.document.getElementById("view-frame");
