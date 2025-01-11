@@ -1,16 +1,17 @@
 
-<form action="/Login" method="POST">
-    <div class="form-group d-flex flex-column justify-content-center w-25">
-    <h2><%= title %></h2>
-    <label for="email">Email Address</label>
-    <input type="email" id="email" name="user_email" class="form-control" placeholder="Enter Email"/>
+<form action="/Login" method="POST" class="container">
+    <div class="row container align-self-center text-center justify-content-center">
 
-    <label for="password">Password</label>
-    <input type="password" class="form-control" id="password" name="user_password" placeholder="Password">
+    <h2 class="row justify-content-center"><%= title %></h2>
+    <label class='row align-self-center text-center justify-content-center' for="email">Email Address</label>
+    <input type="email" id="email" name="user_email" class="form-control w-50 row align-self-center text-center justify-content-center" placeholder="Enter Email"/>
+
+    <label for="password" class="row justify-content-center">Password</label>
+    <input type="password" class="form-control w-50 row align-self-center text-center" id="password" name="user_password" placeholder="Password">
+
     </div>
 
-
-
-    <button type="submit" class="btn btn-primary">Submit</button>
-
+    <div class="text-center">
+    <button type="submit" class="row btn btn-primary" id="submit-button">Submit</button>
+    </div>    
 </form>

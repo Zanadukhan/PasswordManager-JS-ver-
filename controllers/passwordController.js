@@ -58,7 +58,6 @@ let passController = {
     },
 
     editEntry: async (req, res) => {
-        console.log(req.body)
         const id = req.params.id
         await prisma.loginItem.update({
             where: {
