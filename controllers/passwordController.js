@@ -44,6 +44,7 @@ let passController = {
             }
         })
         const password = decryptData(entry.password)
+        console.log(req.path)
         res.render('entry', {entry: entry, entry_pass:password, layout: 'layouts/entry-layout'})
     },
 
