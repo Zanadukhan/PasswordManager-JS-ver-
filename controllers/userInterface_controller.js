@@ -20,11 +20,11 @@ let userinterface_controller = {
     },
 
     registerPage: (req, res) => {
-        res.render('register', { layout: 'layouts/login-layout' })
+        res.render('login', { title: 'Register', layout: 'layouts/login-layout' })
     },
 
     loginPage: (req, res) => {
-        res.render('login', { layout: 'layouts/login-layout' })
+        res.render('login', { title: 'Login', layout: 'layouts/login-layout' })
     }
 
 }
