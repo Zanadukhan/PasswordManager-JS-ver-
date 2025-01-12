@@ -1,5 +1,6 @@
 import passport from 'passport';
 import { PrismaClient, Prisma } from '@prisma/client';
+import bcrypt from 'bcrypt'
 
 const prisma = new PrismaClient();
 
@@ -11,13 +12,16 @@ let authController = {
                 email: email
             }
         });
-        if (!user) {
-            return done(null, false, { message: "User not found" });
-        }
-        if (user.password !== password) {
-            return done(null, false, { message: "Password incorrect" });
-        }
-        return done(null, user);
+
+        bcrypt.compare(password, user.password, (err, result) => {
+            if (err) {
+                return done(err);
+            }
+            if (!result) {
+                return done(null, false, { message: "Password incorrect" });
+            }
+            return done(null, user);
+        });
         
     },
 

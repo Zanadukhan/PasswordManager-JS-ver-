@@ -1,4 +1,4 @@
-import crypto from 'crypto'
+import crypto, { pbkdf2 } from 'crypto'
 import config from '../config.js'
 
 
@@ -32,3 +32,5 @@ const encryptionIV = crypto
       decipher.final('utf8')
     ) // Decrypts data and converts to utf8
   }
+
+  
