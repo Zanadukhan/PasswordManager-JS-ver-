@@ -13,6 +13,10 @@ let authController = {
             }
         });
 
+        if (!user) {
+            return done(null, false, { message: "User not found" });
+        }
+
         bcrypt.compare(password, user.password, (err, result) => {
             if (err) {
                 return done(err);

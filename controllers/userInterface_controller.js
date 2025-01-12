@@ -21,13 +21,11 @@ let userinterface_controller = {
 
     registerPage: (req, res) => {
         const currentPath = req.path
-        console.log(currentPath)
         res.render('login', { currentPath: currentPath, title: 'Register', layout: 'layouts/login-layout' })
     },
 
     loginPage: (req, res) => {
         const currentPath = req.path
-        console.log(currentPath)
         res.render('login', { currentPath: currentPath, title: 'Login', layout: 'layouts/login-layout' })
     }
 

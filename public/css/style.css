@@ -22,6 +22,7 @@
  iframe {
     border-width: 2px;
     border-style: solid;
+    border-radius: 25px;
  }
 
  form div {
@@ -62,6 +63,7 @@ footer {
 
 #exit-iframe {
    margin-left: 10px;
+   margin-right: 10px;
 }
 
 #entry-frame {
@@ -72,7 +74,7 @@ footer {
 }
 
 #entry-name {
-   margin-top: 0.5em;
+   margin-top: 12.5px;
    font-size: 50px;
 }
 
@@ -86,4 +88,17 @@ footer {
 
 .offcanvas-body {
    padding-top: 0px;
+}
+
+.navbar-nav {
+   gap: 10px;
+}
+
+nav{
+   margin-bottom: 1em;
+   background-color: #e3f2fd;
+}
+
+.table {
+   margin-bottom: 1em;
 }
