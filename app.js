@@ -45,6 +45,8 @@ app.get('/dashboard', authController.checkAuthenticated, userinterface_controlle
 
 app.get('/create', authController.checkAuthenticated, userinterface_controller.create)
 
+app.get('/generate', authController.checkAuthenticated, passController.generate)
+
 app.post('/createpass', authController.checkAuthenticated, passController.createEntry)
 
 app.post('/delete/:id', authController.checkAuthenticated, passController.deleteEntry)

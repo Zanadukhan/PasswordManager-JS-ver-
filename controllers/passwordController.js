@@ -72,6 +72,10 @@ let passController = {
             }
     })
     res.redirect(`/entry/${id}`)
+    },
+
+    generate: (req, res) => {
+        res.render('generate')
     }
 };
 
